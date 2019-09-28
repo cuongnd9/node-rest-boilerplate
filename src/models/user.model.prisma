@@ -1,0 +1,16 @@
+enum Sex {
+  MALE
+  FEMALE
+}
+
+type User {
+  id: UUID! @id
+  email: String @unique
+  name: String!
+  phoneNumber: String
+  address: String
+  dob: DateTime
+  sex: Sex
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}

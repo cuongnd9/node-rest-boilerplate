@@ -1,0 +1,15 @@
+enum Role {
+  ADMIN
+  MANAGER
+  STAFF
+}
+
+type Account {
+  id: UUID! @id
+  username: String! @unique
+  password: String!
+  role: Role! @default(value: STAFF)
+  user: User @relation(name: "AccountUser", onDelete: CASCADE)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}

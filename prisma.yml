@@ -1,0 +1,7 @@
+endpoint: http://localhost:4466
+datamodel:
+  - src/models/user.model.prisma
+  - src/models/account.model.prisma
+generate:
+  - generator: javascript-client
+    output: ./src/generated/prisma-client/
