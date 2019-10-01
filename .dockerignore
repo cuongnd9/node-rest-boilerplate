@@ -9,7 +9,7 @@ Dockerfile
 .env
 .eslintrc
 .editorconfig
-.gitlab-ci.yml
+.prettierrc
 
 LICENSE.md
 README.md
