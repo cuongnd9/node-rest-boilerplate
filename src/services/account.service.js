@@ -12,7 +12,8 @@ async function register(data) {
     ...data,
     password: hashPassword,
   };
-  return prisma.createAccount(newData);
+  const newAccount = await prisma.createAccount(newData);
+  return _.omit(newAccount, ['password']);
 }
 
 async function login(data) {
@@ -23,7 +24,7 @@ async function login(data) {
   }
   const match = await bcrypt.compare(password, account.password);
   if (!match) {
-    throw new Error('password is incorrect');
+    throw Boom.unauthorized('password is incorrect');
   }
   const { id, role } = account;
   const { secretKey, expiresIn, algorithm } = config.jwt;
