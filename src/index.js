@@ -1,4 +1,3 @@
-import 'dotenv/config';
 import express from 'express';
 import signale from 'signale';
 import apiRoute from './routes';
