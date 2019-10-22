@@ -1,4 +1,4 @@
-import { prisma } from '@/generated/prisma-client';
+import { prisma } from '@/models/prisma-client';
 
 function getUsers() {
   return prisma.users();
