@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import _ from 'lodash';
 import Boom from '@hapi/boom';
-import { prisma } from '@/generated/prisma-client';
+import { prisma } from '@/models/prisma-client';
 import config from '@/config';
 
 async function register(data) {
