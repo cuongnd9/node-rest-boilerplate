@@ -23,6 +23,9 @@ export default function handleError(err, req, res, next) {
   // Default error.
   const defaultError = Boom.badImplementation('An internal server error occurred');
   const { statusCode, payload } = defaultError.output;
-  res.status(statusCode).json(payload);
+  res.status(statusCode).json({
+    ...payload,
+    errors: err.message,
+  });
   next();
 }
